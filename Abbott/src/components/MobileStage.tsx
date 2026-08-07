@@ -16,20 +16,13 @@ type MobileStageProps = {
 };
 
 /**
- * Mobile-first stage locked to artboard 576×1024.
- * Layers stack full-bleed; UI children sit on top in normal flow.
+ * Full-bleed mobile stage for iPhone Safari.
+ * Fills the visible viewport; art covers without letterboxing.
  */
 export function MobileStage({ layers, children }: MobileStageProps) {
   return (
-    <div className="flex h-dvh w-full items-center justify-center bg-[#070212]">
-      <div
-        className="animate-scene-in relative overflow-hidden shadow-[0_0_60px_rgba(80,40,160,0.35)]"
-        style={{
-          aspectRatio: "576 / 1024",
-          width: "min(100vw, calc(100dvh * 576 / 1024))",
-          maxHeight: "100dvh",
-        }}
-      >
+    <div className="relative h-dvh w-full overflow-hidden bg-[#070212]">
+      <div className="animate-scene-in absolute inset-0">
         {layers.map((layer) => (
           <Image
             key={layer.src}
@@ -37,8 +30,8 @@ export function MobileStage({ layers, children }: MobileStageProps) {
             alt={layer.alt ?? ""}
             fill
             priority={layer.priority}
-            sizes="(max-width: 430px) 100vw, 430px"
-            className={`pointer-events-none object-fill select-none ${layer.className ?? ""}`}
+            sizes="100vw"
+            className={`pointer-events-none object-cover object-center select-none ${layer.className ?? ""}`}
             aria-hidden={layer.alt ? undefined : true}
           />
         ))}
