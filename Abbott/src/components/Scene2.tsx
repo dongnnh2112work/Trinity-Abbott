@@ -20,7 +20,7 @@ type Scene2Props = {
  */
 const LAYOUT = {
   /** Khoảng cách từ mép trên tới cụm Cảm ơn / Tên / Slogan (dvh) */
-  clusterTopPct: 29,
+  clusterTopPct: 15,
   /** Gap dưới khung tên → "Đã xác nhận" (rem) */
   confirmedMtRem: 0.8,
   /** Gap dưới "Đã xác nhận" → slogan asset (rem) */
