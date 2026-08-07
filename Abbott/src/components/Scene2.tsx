@@ -43,11 +43,11 @@ export function Scene2({ name, onBack }: Scene2Props) {
             </p>
           </NameFrame>
 
-          <p className="text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
+          <p className="mt-2 text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
             Đã xác nhận
           </p>
 
-          <div className="mt-1 space-y-0.5 text-center">
+          <div className="mt-4 space-y-0.5 text-center">
             <p className="text-[clamp(0.95rem,3.8vw,1.15rem)] font-bold uppercase leading-snug tracking-[0.04em] text-[#e8c96a]">
               Đồng hành cùng ba mẹ
             </p>
