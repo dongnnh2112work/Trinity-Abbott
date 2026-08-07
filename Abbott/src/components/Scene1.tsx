@@ -44,7 +44,7 @@ export function Scene1({ onConfirm }: Scene1Props) {
     const trimmed = name.trim().replace(/\s+/g, " ");
 
     if (!trimmed) {
-      setError("Vui lòng nhập Họ & Tên");
+      setError("Vui lòng nhập Họ & Tên tại đây");
       return;
     }
 
@@ -98,17 +98,14 @@ export function Scene1({ onConfirm }: Scene1Props) {
               style={{ fontSize }}
               className="w-full resize-none overflow-hidden border-0 border-b border-white/80 bg-transparent pb-2 text-center font-semibold uppercase leading-snug tracking-[0.04em] text-white caret-[#e8c96a] outline-none placeholder:text-transparent"
             />
-            <p className="mt-3 text-center text-[clamp(0.72rem,2.8vw,0.88rem)] leading-relaxed text-white/90">
-              Vui lòng nhập Họ &amp; Tên tại đây
+            <p
+              className={`mt-3 text-center text-[clamp(0.72rem,2.8vw,0.88rem)] leading-relaxed ${
+                error ? "text-amber-200" : "text-white/90"
+              }`}
+              role={error ? "alert" : undefined}
+            >
+              {error || "Vui lòng nhập Họ & Tên tại đây"}
             </p>
-            {error ? (
-              <p
-                className="mt-2 text-center text-[11px] text-amber-200"
-                role="alert"
-              >
-                {error}
-              </p>
-            ) : null}
           </NameFrame>
         </div>
 
