@@ -13,16 +13,17 @@ type Scene2Props = {
 
 /**
  * ====== SCENE 2 LAYOUT KNOBS (chỉnh tại đây) ======
- * Đơn vị % chiều cao màn hình (iPhone 9:19 ≈ 390×823).
+ * clusterTopPct dùng đơn vị dvh (% chiều cao viewport điện thoại).
  * - Tăng số → cụm text đi XUỐNG
  * - Giảm số → cụm text đi LÊN
+ * Ví dụ iPhone cao ~844px: 10 ≈ 84px, 20 ≈ 169px, 30 ≈ 253px từ mép trên.
  */
 const LAYOUT = {
-  /** Khoảng cách từ mép trên tới cụm Cảm ơn / Tên / Slogan */
+  /** Khoảng cách từ mép trên tới cụm Cảm ơn / Tên / Slogan (dvh) */
   clusterTopPct: 29,
-  /** Gap dưới khung tên → "Đã xác nhận" (px-ish via rem) */
+  /** Gap dưới khung tên → "Đã xác nhận" (rem) */
   confirmedMtRem: 0.8,
-  /** Gap dưới "Đã xác nhận" → slogan asset */
+  /** Gap dưới "Đã xác nhận" → slogan asset (rem) */
   sloganMtRem: 0.3,
 } as const;
 
@@ -48,7 +49,8 @@ export function Scene2({ name, onBack }: Scene2Props) {
 
       <div
         className="relative z-[2] flex h-full w-full flex-col items-center px-[10%]"
-        style={{ paddingTop: `${LAYOUT.clusterTopPct}%` }}
+        style={{ paddingTop: `${LAYOUT.clusterTopPct}dvh` }}
+        data-cluster-top={`${LAYOUT.clusterTopPct}dvh`}
       >
         <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
           <p className="text-center text-[clamp(1rem,4vw,1.25rem)] font-bold uppercase tracking-[0.18em] text-white">
