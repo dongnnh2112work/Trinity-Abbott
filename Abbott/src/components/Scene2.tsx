@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo } from "react";
 import { MobileStage } from "./MobileStage";
 import { NameFrame } from "./NameFrame";
@@ -28,7 +29,7 @@ export function Scene2({ name, onBack }: Scene2Props) {
         },
       ]}
     >
-      <WhiteParticles count={40} />
+      <WhiteParticles count={48} />
 
       <div className="relative z-[2] flex h-full w-full flex-col items-center px-[10%] pt-[22%]">
         <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
@@ -45,20 +46,19 @@ export function Scene2({ name, onBack }: Scene2Props) {
             </p>
           </NameFrame>
 
-          <p className="mt-2 text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
+          <p className="mt-4 text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
             Đã xác nhận
           </p>
 
-          <div className="mt-4 space-y-0.5 text-center">
-            <p className="text-[clamp(0.95rem,3.8vw,1.15rem)] font-bold uppercase leading-snug tracking-[0.04em] text-[#e8c96a]">
-              Đồng hành cùng ba mẹ
-            </p>
-            <p className="text-[clamp(0.95rem,3.8vw,1.15rem)] font-bold uppercase leading-snug tracking-[0.04em] text-[#e8c96a]">
-              Xây nền tảng tăng trưởng
-            </p>
-            <p className="text-[clamp(0.78rem,3.2vw,0.95rem)] font-semibold uppercase leading-snug tracking-[0.04em] text-white">
-              Cho thế hệ tương lai Việt Nam
-            </p>
+          <div className="mt-5 flex w-full justify-center">
+            <Image
+              src="/assets/scene2/slogan-crop.png"
+              alt="Đồng hành cùng ba mẹ xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"
+              width={962}
+              height={254}
+              className="h-auto w-full max-w-[21rem] object-contain select-none"
+              priority
+            />
           </div>
         </div>
 
