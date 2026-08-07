@@ -27,7 +27,7 @@ export function Scene2({ name, onBack }: Scene2Props) {
         },
       ]}
     >
-      <div className="relative flex h-full w-full flex-col items-center px-[10%] pt-[14%]">
+      <div className="relative flex h-full w-full flex-col items-center px-[10%] pt-[22%]">
         {/* Một cụm duy nhất — không để khoảng trống lớn giữa các dòng */}
         <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
           <p className="text-center text-[clamp(1rem,4vw,1.25rem)] font-bold uppercase tracking-[0.18em] text-white">
