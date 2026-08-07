@@ -16,8 +16,8 @@ export function NameFrame({
 }: NameFrameProps) {
   const toneClass =
     tone === "glow"
-      ? "border-transparent bg-[#2a1458]/90 shadow-[0_0_18px_rgba(160,220,255,0.55),0_0_42px_rgba(120,170,255,0.35),inset_0_0_20px_rgba(80,40,160,0.35)] animate-pulse-glow"
-      : "border-[#d4af37]/90 bg-[#1a0a3e]/55 shadow-[0_0_20px_rgba(212,175,55,0.22),inset_0_0_24px_rgba(40,20,80,0.35)]";
+      ? "border-transparent bg-[#2a1458]/92 shadow-[0_0_14px_rgba(160,200,255,0.4)]"
+      : "border-[#d4af37]/90 bg-[#1a0a3e]/55 shadow-[0_0_16px_rgba(212,175,55,0.18)]";
 
   return (
     <div

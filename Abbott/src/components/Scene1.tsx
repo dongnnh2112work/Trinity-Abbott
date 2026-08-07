@@ -64,60 +64,49 @@ export function Scene1({ onConfirm }: Scene1Props) {
     >
       <form
         onSubmit={handleSubmit}
-        className="relative h-full w-full"
+        className="relative flex h-full w-full flex-col items-center px-[10%] pt-[12%] pb-[10%]"
         noValidate
       >
-        {/* 1. Input card — ~18%–37% như mockup */}
-        <div className="absolute top-[17%] left-[14%] right-[14%] z-[2] min-h-[19%]">
-          <NameFrame
-            tone="gold"
-            className="flex h-full min-h-[9.5rem] flex-col px-5 py-5"
-          >
-            <label className="sr-only" htmlFor="guest-name">
-              Họ & Tên
-            </label>
-            <div className="flex min-h-[9.5rem] flex-1 flex-col">
-              <div className="flex-1" aria-hidden />
-              <textarea
-                id="guest-name"
-                ref={textareaRef}
-                rows={1}
-                autoComplete="name"
-                autoFocus
-                value={name}
-                onChange={(event) => {
-                  setName(event.target.value.replace(/\n/g, " "));
-                  if (error) setError("");
-                }}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    event.currentTarget.form?.requestSubmit();
-                  }
-                }}
-                maxLength={80}
-                placeholder=" "
-                style={{ fontSize }}
-                className="w-full resize-none overflow-hidden border-0 border-b border-white/80 bg-transparent pb-2 text-center font-semibold uppercase leading-snug tracking-[0.04em] text-white caret-[#e8c96a] outline-none placeholder:text-transparent"
-              />
-              <p className="mt-3 text-center text-[clamp(0.72rem,2.8vw,0.88rem)] leading-relaxed text-white/90">
-                Vui lòng nhập Họ &amp; Tên tại đây
-              </p>
-              {error ? (
-                <p
-                  className="mt-2 text-center text-[11px] text-amber-200"
-                  role="alert"
-                >
-                  {error}
-                </p>
-              ) : null}
-              <div className="flex-[0.55]" aria-hidden />
-            </div>
-          </NameFrame>
-        </div>
+        <NameFrame
+          tone="gold"
+          className="flex w-full max-w-[22rem] min-h-[8.5rem] flex-col justify-center px-5 py-5"
+        >
+          <label className="sr-only" htmlFor="guest-name">
+            Họ & Tên
+          </label>
+          <textarea
+            id="guest-name"
+            ref={textareaRef}
+            rows={1}
+            autoComplete="name"
+            autoFocus
+            value={name}
+            onChange={(event) => {
+              setName(event.target.value.replace(/\n/g, " "));
+              if (error) setError("");
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                event.currentTarget.form?.requestSubmit();
+              }
+            }}
+            maxLength={80}
+            placeholder=" "
+            style={{ fontSize }}
+            className="w-full resize-none overflow-hidden border-0 border-b border-white/80 bg-transparent pb-2 text-center font-semibold uppercase leading-snug tracking-[0.04em] text-white caret-[#e8c96a] outline-none placeholder:text-transparent"
+          />
+          <p className="mt-3 text-center text-[clamp(0.72rem,2.8vw,0.88rem)] leading-relaxed text-white/90">
+            Vui lòng nhập Họ &amp; Tên tại đây
+          </p>
+          {error ? (
+            <p className="mt-2 text-center text-[11px] text-amber-200" role="alert">
+              {error}
+            </p>
+          ) : null}
+        </NameFrame>
 
-        {/* 2. Slogan — khoảng giữa màn hình */}
-        <div className="absolute top-[40.5%] left-[10%] right-[10%] z-[1] flex justify-center">
+        <div className="mt-8 flex w-full justify-center">
           <Image
             src="/assets/scene1/slogan-crop.png"
             alt="Cùng đồng hành xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"
@@ -128,14 +117,13 @@ export function Scene1({ onConfirm }: Scene1Props) {
           />
         </div>
 
-        {/* 3. Button — khoảng 64%–72% */}
-        <div className="absolute top-[63.5%] left-[16%] right-[16%] z-[2] flex justify-center">
-          <GlowButton
-            type="submit"
-            label="Xác nhận đồng hành"
-            className="max-w-[18.5rem] rounded-[1.15rem] py-3.5"
-          />
-        </div>
+        <div className="flex-1" aria-hidden />
+
+        <GlowButton
+          type="submit"
+          label="Xác nhận đồng hành"
+          className="max-w-[18.5rem] rounded-[1.15rem] py-3.5"
+        />
       </form>
     </MobileStage>
   );

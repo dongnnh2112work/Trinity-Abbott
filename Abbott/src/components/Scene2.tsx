@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo } from "react";
 import { MobileStage } from "./MobileStage";
 import { NameFrame } from "./NameFrame";
@@ -28,14 +27,14 @@ export function Scene2({ name, onBack }: Scene2Props) {
         },
       ]}
     >
-      <div className="relative h-full w-full">
-        {/* Cảm ơn → tên → Đã xác nhận → slogan (gom sát nhau) */}
-        <div className="absolute top-[18%] left-[10%] right-[10%] z-[2] flex flex-col items-center gap-1.5">
+      <div className="relative flex h-full w-full flex-col items-center px-[10%] pt-[14%]">
+        {/* Một cụm duy nhất — không để khoảng trống lớn giữa các dòng */}
+        <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
           <p className="text-center text-[clamp(1rem,4vw,1.25rem)] font-bold uppercase tracking-[0.18em] text-white">
             Cảm ơn
           </p>
 
-          <NameFrame tone="glow" className="w-full max-w-[19rem] px-5 py-3.5">
+          <NameFrame tone="glow" className="w-full px-5 py-3.5">
             <p
               style={{ fontSize }}
               className="break-words text-center font-bold uppercase leading-snug tracking-[0.06em] text-white text-balance"
@@ -44,19 +43,20 @@ export function Scene2({ name, onBack }: Scene2Props) {
             </p>
           </NameFrame>
 
-          <p className="mt-0.5 text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
+          <p className="text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
             Đã xác nhận
           </p>
 
-          <div className="mt-0.5 flex w-full justify-center">
-            <Image
-              src="/assets/scene2/slogan-crop.png"
-              alt="Đồng hành cùng ba mẹ xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"
-              width={424}
-              height={122}
-              className="h-auto w-full max-w-[21rem] object-contain select-none"
-              priority
-            />
+          <div className="mt-1 space-y-0.5 text-center">
+            <p className="text-[clamp(0.95rem,3.8vw,1.15rem)] font-bold uppercase leading-snug tracking-[0.04em] text-[#e8c96a]">
+              Đồng hành cùng ba mẹ
+            </p>
+            <p className="text-[clamp(0.95rem,3.8vw,1.15rem)] font-bold uppercase leading-snug tracking-[0.04em] text-[#e8c96a]">
+              Xây nền tảng tăng trưởng
+            </p>
+            <p className="text-[clamp(0.78rem,3.2vw,0.95rem)] font-semibold uppercase leading-snug tracking-[0.04em] text-white">
+              Cho thế hệ tương lai Việt Nam
+            </p>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export function Scene2({ name, onBack }: Scene2Props) {
           <button
             type="button"
             onClick={onBack}
-            className="absolute bottom-[2.5%] left-1/2 z-[2] -translate-x-1/2 rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.16em] text-white/40 transition hover:text-white/80"
+            className="mt-auto mb-[3%] rounded-full px-3 py-1.5 text-[9px] uppercase tracking-[0.16em] text-white/40 transition hover:text-white/80"
           >
             Nhập lại tên
           </button>

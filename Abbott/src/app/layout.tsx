@@ -9,7 +9,7 @@ const beVietnam = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Trinity | Đồng hành thế hệ tương lai",
+  title: "Trinity Abbott | Đồng hành thế hệ tương lai",
   description:
     "Cùng đồng hành xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam",
 };
