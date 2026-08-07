@@ -6,8 +6,8 @@ type WhiteParticlesProps = {
   count?: number;
 };
 
-/** Soft white particles — ambient motion for Scene 2. */
-export function WhiteParticles({ count = 36 }: WhiteParticlesProps) {
+/** Tiny glowing white particles — soft ambient sparkle for Scene 2. */
+export function WhiteParticles({ count = 48 }: WhiteParticlesProps) {
   const particles = useMemo(
     () =>
       Array.from({ length: count }, (_, i) => {
@@ -16,10 +16,11 @@ export function WhiteParticles({ count = 36 }: WhiteParticlesProps) {
           id: i,
           left: `${(seed * 1.37) % 100}%`,
           top: `${(i * 19 + 7) % 100}%`,
-          size: 1.5 + (i % 4) * 0.7,
-          delay: `${(i % 10) * 0.35}s`,
-          duration: `${3.8 + (i % 6) * 0.55}s`,
-          drift: `${6 + (i % 5) * 3}px`,
+          size: 0.7 + (i % 3) * 0.35,
+          delay: `${(i % 12) * 0.4}s`,
+          duration: `${4.2 + (i % 7) * 0.5}s`,
+          drift: `${4 + (i % 4) * 2}px`,
+          glow: 3 + (i % 3),
         };
       }),
     [count],
@@ -42,7 +43,7 @@ export function WhiteParticles({ count = 36 }: WhiteParticlesProps) {
             ["--drift" as string]: p.drift,
             animationDuration: p.duration,
             animationDelay: p.delay,
-            boxShadow: "0 0 6px rgba(255,255,255,0.85)",
+            boxShadow: `0 0 ${p.glow}px rgba(255,255,255,0.95), 0 0 ${p.glow * 2.5}px rgba(255,255,255,0.45)`,
           }}
         />
       ))}
