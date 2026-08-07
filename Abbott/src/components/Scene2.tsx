@@ -11,6 +11,21 @@ type Scene2Props = {
   onBack?: () => void;
 };
 
+/**
+ * ====== SCENE 2 LAYOUT KNOBS (chỉnh tại đây) ======
+ * Đơn vị % chiều cao màn hình (iPhone 9:19 ≈ 390×823).
+ * - Tăng số → cụm text đi XUỐNG
+ * - Giảm số → cụm text đi LÊN
+ */
+const LAYOUT = {
+  /** Khoảng cách từ mép trên tới cụm Cảm ơn / Tên / Slogan */
+  clusterTopPct: 29,
+  /** Gap dưới khung tên → "Đã xác nhận" (px-ish via rem) */
+  confirmedMtRem: 0.8,
+  /** Gap dưới "Đã xác nhận" → slogan asset */
+  sloganMtRem: 0.3,
+} as const;
+
 export function Scene2({ name, onBack }: Scene2Props) {
   const fontSize = useMemo(() => {
     const len = name.trim().length;
@@ -31,7 +46,10 @@ export function Scene2({ name, onBack }: Scene2Props) {
     >
       <WhiteParticles count={48} />
 
-      <div className="relative z-[2] flex h-full w-full flex-col items-center px-[10%] pt-[22%]">
+      <div
+        className="relative z-[2] flex h-full w-full flex-col items-center px-[10%]"
+        style={{ paddingTop: `${LAYOUT.clusterTopPct}%` }}
+      >
         <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
           <p className="text-center text-[clamp(1rem,4vw,1.25rem)] font-bold uppercase tracking-[0.18em] text-white">
             Cảm ơn
@@ -46,11 +64,17 @@ export function Scene2({ name, onBack }: Scene2Props) {
             </p>
           </NameFrame>
 
-          <p className="mt-4 text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95">
+          <p
+            className="text-center text-[clamp(0.7rem,2.6vw,0.82rem)] font-semibold uppercase tracking-[0.14em] text-white/95"
+            style={{ marginTop: `${LAYOUT.confirmedMtRem}rem` }}
+          >
             Đã xác nhận
           </p>
 
-          <div className="mt-5 flex w-full justify-center">
+          <div
+            className="flex w-full justify-center"
+            style={{ marginTop: `${LAYOUT.sloganMtRem}rem` }}
+          >
             <Image
               src="/assets/scene2/slogan-crop.png"
               alt="Đồng hành cùng ba mẹ xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"

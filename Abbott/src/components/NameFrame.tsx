@@ -16,7 +16,7 @@ export function NameFrame({
 }: NameFrameProps) {
   const toneClass =
     tone === "glow"
-      ? "border-transparent bg-[#2a1458]/92 shadow-[0_0_14px_rgba(160,200,255,0.4)]"
+      ? "animate-breath-glow border-transparent bg-[linear-gradient(180deg,#3d2278_0%,#2a1558_100%)]"
       : "border-[#d4af37]/90 bg-[#1a0a3e]/55 shadow-[0_0_16px_rgba(212,175,55,0.18)]";
 
   return (
