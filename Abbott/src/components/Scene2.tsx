@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { MobileStage } from "./MobileStage";
 import { NameFrame } from "./NameFrame";
+import { WhiteParticles } from "./WhiteParticles";
 
 type Scene2Props = {
   name: string;
@@ -27,8 +28,9 @@ export function Scene2({ name, onBack }: Scene2Props) {
         },
       ]}
     >
-      <div className="relative flex h-full w-full flex-col items-center px-[10%] pt-[22%]">
-        {/* Một cụm duy nhất — không để khoảng trống lớn giữa các dòng */}
+      <WhiteParticles count={40} />
+
+      <div className="relative z-[2] flex h-full w-full flex-col items-center px-[10%] pt-[22%]">
         <div className="flex w-full max-w-[22rem] flex-col items-center gap-2">
           <p className="text-center text-[clamp(1rem,4vw,1.25rem)] font-bold uppercase tracking-[0.18em] text-white">
             Cảm ơn
