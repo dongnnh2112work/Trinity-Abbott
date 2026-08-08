@@ -110,7 +110,7 @@ export function Scene1({ onConfirm }: Scene1Props) {
         </div>
 
         {/* Slogan — giữa màn ~42% */}
-        <div className="absolute top-[35%] left-[10%] right-[10%] z-[1] flex justify-center">
+        <div className="absolute top-[38%] left-[10%] right-[10%] z-[1] flex justify-center">
           <Image
             src="/assets/scene1/slogan-crop.png"
             alt="Cùng đồng hành xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"
