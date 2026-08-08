@@ -68,7 +68,7 @@ export function Scene1({ onConfirm }: Scene1Props) {
         noValidate
       >
         {/* Input — theo mockup ~16% */}
-        <div className="absolute top-[14%] left-[12%] right-[12%] z-[2]">
+        <div className="absolute top-[20%] left-[12%] right-[12%] z-[2]">
           <NameFrame
             tone="gold"
             className="mx-auto flex min-h-[8.75rem] w-full max-w-[22rem] flex-col justify-center px-5 py-5"
@@ -110,7 +110,7 @@ export function Scene1({ onConfirm }: Scene1Props) {
         </div>
 
         {/* Slogan — giữa màn ~42% */}
-        <div className="absolute top-[40%] left-[10%] right-[10%] z-[1] flex justify-center">
+        <div className="absolute top-[39%] left-[10%] right-[10%] z-[1] flex justify-center">
           <Image
             src="/assets/scene1/slogan-crop.png"
             alt="Cùng đồng hành xây nền tảng tăng trưởng cho thế hệ tương lai Việt Nam"
@@ -122,7 +122,7 @@ export function Scene1({ onConfirm }: Scene1Props) {
         </div>
 
         {/* Button — ~62%, không đẩy sát đáy */}
-        <div className="absolute top-[62%] left-[14%] right-[14%] z-[2] flex justify-center">
+        <div className="absolute top-[57%] left-[14%] right-[14%] z-[2] flex justify-center">
           <GlowButton
             type="submit"
             label="Xác nhận đồng hành"
